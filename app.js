@@ -1,12 +1,12 @@
 const express = require("express");
 const path = require("node:path");
 const app = express();
-const indexRouter = require("./routes/index");
+const router = require("./routes/router");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-
-app.use("/", indexRouter);
+app.use(express.urlencoded({ extended: true }));
+app.use("/", router);
 
 app.listen(3000, () => {
   console.log("app running");

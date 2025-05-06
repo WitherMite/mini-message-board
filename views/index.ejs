@@ -7,11 +7,12 @@
   </head>
   <body>
     <main class="message-center">
-      <% messages.map((message) => { %>
+      <a href="/new"><button>add message</button></a>
+      <% messages.map((message, i) => { %>
       <div class="card">
-        <h2 class="user"><%= message.user %></h2>
+        <h2 class="user"><%= message.user %>:</h2>
         <p class="text"><%= message.text %></p>
-        <p class="date"><%= message.added %></p>
+        <a href="/message?n=<%= i %>"><button>details</button></a>
       </div>
       <% }); %>
     </main>
