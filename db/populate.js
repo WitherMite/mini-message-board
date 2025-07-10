@@ -6,7 +6,8 @@ const caPath = process.argv[3];
 const ca = caPath ? fs.readFileSync(caPath).toString() : false;
 
 const SQL = `
-CREATE TABLE IF NOT EXISTS messages (
+DROP TABLE IF EXISTS messages;
+CREATE TABLE messages (
   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   username TEXT,
   message TEXT,

@@ -10,8 +10,8 @@
       <a href="/new"><button>add message</button></a>
       <% messages.map((message, i) => { %>
       <div class="card">
-        <h2 class="user"><%= message.user %>:</h2>
-        <p class="text"><%= message.text %></p>
+        <h2 class="user"><%= message.username %>:</h2>
+        <p class="text"><%= message.message %></p>
         <a href="/message?n=<%= i %>"><button>details</button></a>
       </div>
       <% }); %>
